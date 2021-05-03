@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="fr">
+
+<head>
+  <title>jQuery_projet_03_exercice_04</title>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container-fluid bg-primary row justify-content-center p-3">
+    <h1 class="col-12 p-4 text-center text-warning">jQuery_projet_03_exercice_04</h1>
+    <h2 class="col-9 p-4 text-center text-light">créer une div coloré et cinq boutons. Un pour augmenter la hauteur de la div, un pour faire disparaitre la div, un pour changer la couleur de la div, un pour revenir à la couleur initiale et un pour la faire réapparaitre.</h2>
+    <div class="offset-1 col-10 row justify-content-center">
+      <div class="row bg-warning rounded p-2 m-2">
+        <div class="offset-1 col-10 row justify-content-center bg-secondary rounded m-4">
+          <button class="btn btn-outline-primary p-3 m-3" id="augmenter" name="button" type="button">AUGMENTER LA DIV !</button>
+          <button class="btn btn-outline-warning p-3 m-3" id="cacher" name="button" type="button">FAITES LA DISPARAÎTRE !</button>
+          <button class="btn btn-outline-light p-3 m-3" id="afficher" name="button" type="button">FAITES LA RÉAPPARAÎTRE !</button>
+          <button class="btn btn-outline-danger p-3 m-3" id="changerCouleur" name="button" type="button">CHANGER EN LA COULEUR !</button>
+          <button class="btn btn-outline-success p-3 m-3" id="revenirCouleur" name="button" type="button">REVENEZ À LA COULEUR INITIALE !</button>
+        </div>
+      </div>
+    </div>
+    <div id="divModified" class="divModified"></div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.js">
+  </script>
+  <script>
+  $(document).ready(function() {
+
+    $('#augmenter').click(function() {
+    $('#divModified').css({
+      // 'width': '500px', 'height': '500px'
+      'width': '-=5px', 'height': '-=5px'
+      });
+    });
+
+    $('#cacher').click(function() {
+      $('#divModified').hide();
+    });
+
+    $('#afficher').click(function() {
+      $('#divModified').show();
+    });
+
+    $('#changerCouleur').click(function() {
+    $('#divModified').css({
+      'background-color': 'pink'
+      });
+    });
+
+    $('#revenirCouleur').click(function() {
+    $('#divModified').css({
+      'background-color': 'red'
+      });
+    });
+  });
+  </script>
+</body>
+
+</html>
